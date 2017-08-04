@@ -1,0 +1,51 @@
+.name{
+	width: 96%;
+	margin: 10px auto;
+	display: flex; 
+	border-bottom: 1px solid #ccc;
+}
+.name_left{
+	width: 60px;
+	
+}
+.name_left img{
+	width: 60px;
+	display: block;
+	margin: 10px 0;
+}
+.name_right{
+	flex: 1;
+	margin:  5px 10px 10px 20px;
+}
+.name_right p:nth-child(1){
+	font-size: 16px;
+	font-weight: bold;
+	color: #000000;
+}
+.name_right p:nth-child(2){
+	font-size: 12px; 
+	margin-top: 20px;
+	color: #CCCCCC;
+}
+.name_right p:nth-child(2) span{ 
+	color: #2A70BE;
+}
+.skill{
+	width: 100%; 
+	border-bottom: 1px solid #ccc; 
+	display: flex;
+	padding: 10px 0;
+}
+.skill img{
+	width: 30px;
+	height: 30px;
+	display: block;
+	margin: 0 20px;
+}
+.skill p{
+	flex: 1;
+	margin-right: 10px;
+}
+.skill p span{
+	color: blue;
+}

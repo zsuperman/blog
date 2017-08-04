@@ -1,0 +1,11 @@
+global:
+  search_input_hint: "Search"
+
+post:
+  continue_reading: "Continue reading..."
+  last_updated: "Last updated: "
+ 
+
+tag:
+  all: "All"
+  tags: "Tags"

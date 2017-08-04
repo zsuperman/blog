@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>ES6 | Hello | 康凌</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="ES6">
+    <meta name="description" content="ES6 ES6的学习笔记and代码练习      基于webpack打包  let     const                                                                                             const              数值的扩展 数组的扩展">
+<meta name="keywords" content="ES6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6">
+<meta property="og:url" content="http://yoursite.com/2017/08/02/ES5/index.html">
+<meta property="og:site_name" content="Hello">
+<meta property="og:description" content="ES6 ES6的学习笔记and代码练习      基于webpack打包  let     const                                                                                             const              数值的扩展 数组的扩展">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://github.com/SimplyWenjing/ES6/blob/master/Note/let.jpg">
+<meta property="og:image" content="https://github.com/SimplyWenjing/ES6/blob/master/Note/const.jpg">
+<meta property="og:image" content="https://github.com/SimplyWenjing/ES6/blob/master/Note/number.jpg">
+<meta property="og:image" content="https://github.com/SimplyWenjing/ES6/blob/master/Note/Array.jpg">
+<meta property="og:image" content="https://github.com/SimplyWenjing/ES6/blob/master/Note/jiegou.jpg">
+<meta property="og:image" content="https://github.com/SimplyWenjing/ES6/blob/master/Note/function.jpg">
+<meta property="og:image" content="https://github.com/SimplyWenjing/ES6/blob/master/Note/object.jpg">
+<meta property="og:image" content="https://github.com/SimplyWenjing/ES6/blob/master/Note/set.jpg">
+<meta property="og:image" content="https://github.com/SimplyWenjing/ES6/blob/master/Note/map.jpg">
+<meta property="og:image" content="https://github.com/SimplyWenjing/ES6/blob/master/Note/promise.jpg">
+<meta property="og:updated_time" content="2017-08-03T02:17:16.393Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6">
+<meta name="twitter:description" content="ES6 ES6的学习笔记and代码练习      基于webpack打包  let     const                                                                                             const              数值的扩展 数组的扩展">
+<meta name="twitter:image" content="https://github.com/SimplyWenjing/ES6/blob/master/Note/let.jpg">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/tou.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Akang</h5>
+          <a href="mailto:303429682@qq.com" title="303429682@qq.com" class="mail">303429682@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags/闭包/"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/zsuperman" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                微博
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/" target="_blank" >
+                <i class="icon icon-lg icon-gift"></i>
+                邮箱
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/phone"  >
+                <i class="icon icon-lg icon-phone"></i>
+                电话
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">ES6</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">ES6</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-08-02T07:32:28.000Z" itemprop="datePublished" class="page-time">
+  2017-08-02
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#ES6"><span class="post-toc-number">1.</span> <span class="post-toc-text">ES6</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#let"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">let</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#const"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">const</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数值的扩展"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">数值的扩展</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数组的扩展"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">数组的扩展</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解构赋值"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">解构赋值</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Set-and-Map"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">Set and Map</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Promise"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">Promise</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-ES5"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">ES6</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-08-02 15:32:28" datetime="2017-08-02T07:32:28.000Z"  itemprop="datePublished">2017-08-02</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h1><ul>
+<li>ES6的学习笔记and代码练习     </li>
+<li>基于webpack打包</li>
+</ul>
+<h2 id="let"><a href="#let" class="headerlink" title="let"></a>let</h2><p><img src="https://github.com/SimplyWenjing/ES6/blob/master/Note/let.jpg" alt="let">    </p>
+<h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://github.com/SimplyWenjing/ES6/blob/master/Note/const.jpg" alt="const" title="">
+                </div>
+                <div class="image-caption">const</div>
+            </figure>
+<h2 id="数值的扩展"><a href="#数值的扩展" class="headerlink" title="数值的扩展"></a>数值的扩展</h2><p><img src="https://github.com/SimplyWenjing/ES6/blob/master/Note/number.jpg" alt="数值的扩展"></p>
+<h2 id="数组的扩展"><a href="#数组的扩展" class="headerlink" title="数组的扩展"></a>数组的扩展</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://github.com/SimplyWenjing/ES6/blob/master/Note/Array.jpg" alt="Array" title="">
+                </div>
+                <div class="image-caption">Array</div>
+            </figure>
+<h2 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://github.com/SimplyWenjing/ES6/blob/master/Note/jiegou.jpg" alt="解构" title="">
+                </div>
+                <div class="image-caption">解构</div>
+            </figure>
+<p>##函数扩展<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://github.com/SimplyWenjing/ES6/blob/master/Note/function.jpg" alt="function" title="">
+                </div>
+                <div class="image-caption">function</div>
+            </figure></p>
+<p>##对象的扩展<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://github.com/SimplyWenjing/ES6/blob/master/Note/object.jpg" alt="object" title="">
+                </div>
+                <div class="image-caption">object</div>
+            </figure></p>
+<h2 id="Set-and-Map"><a href="#Set-and-Map" class="headerlink" title="Set and Map"></a>Set and Map</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://github.com/SimplyWenjing/ES6/blob/master/Note/set.jpg" alt="Set and Map" title="">
+                </div>
+                <div class="image-caption">Set and Map</div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://github.com/SimplyWenjing/ES6/blob/master/Note/map.jpg" alt="Set and Map" title="">
+                </div>
+                <div class="image-caption">Set and Map</div>
+            </figure>
+<h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://github.com/SimplyWenjing/ES6/blob/master/Note/promise.jpg" alt="Promise" title="">
+                </div>
+                <div class="image-caption">Promise</div>
+            </figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-08-03T02:17:16.393Z" itemprop="dateUpdated">2017-08-03 10:17:16</time>
+</span><br>
+
+
+        
+    </div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/tou.jpg" alt="Akang">
+            Akang
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/08/02/ES5/&title=《ES6》 — Hello&pic=http://yoursite.com/img/tou.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/08/02/ES5/&title=《ES6》 — Hello&source=做自己爱做的事，爱自己在做的事！" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/08/02/ES5/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ES6》 — Hello&url=http://yoursite.com/2017/08/02/ES5/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/08/02/ES5/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/08/03/new/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">ES5</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/06/04/c/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">常见排序</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/ww.png" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/ww.png" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span> </span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>Akang &copy; 2014 - 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/08/02/ES5/&title=《ES6》 — Hello&pic=http://yoursite.com/img/tou.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/08/02/ES5/&title=《ES6》 — Hello&source=做自己爱做的事，爱自己在做的事！" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/08/02/ES5/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ES6》 — Hello&url=http://yoursite.com/2017/08/02/ES5/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/08/02/ES5/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2017/08/02/ES5/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

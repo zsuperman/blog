@@ -1,0 +1,35 @@
+.content{
+	width: 96%;
+	margin: 10px auto;
+	display: flex; 
+	border-bottom: 1px solid #ccc;
+}
+.cont_left{
+	width: 60px;
+	
+}
+.cont_left img{
+	width: 60px;
+	display: block;
+	margin: 10px 0;
+}
+.cont_right{
+	flex: 1;
+	margin:  5px 10px 10px 20px;
+}
+.cont_right p:nth-child(1){
+	font-size: 16px;
+	font-weight: bold;
+	color: #000000;
+}
+.cont_right p:nth-child(2){
+	font-size: 12px; 
+	color: #CCCCCC;
+}
+.cont_right p:nth-child(2) span{ 
+	color: #2A70BE;
+}
+.cont_right p:nth-child(3){
+	font-size: 14px; 
+	color: #ccc;
+}
